@@ -1,0 +1,4 @@
+/* add `@tailwind` directive for each Tailwind’s layer  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -8,7 +8,7 @@ const ArticlesToDisplay = ({ articles }) => {
       className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-9 lg:grid-cols-3"
     >
       {articles.map((item) => (
-        <li key={item.id} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+        <li key={item.id} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white px-2 shadow">
           <div className="flex w-full items-center justify-between space-x-6 p-3">
             <div className="flex-1 truncate">
               <Link href={`/articles/${item.id}`}>

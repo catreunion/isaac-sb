@@ -25,11 +25,14 @@ const ArticlePage = ({ article }) => {
     <>
       <Head>
         <title>{article.title}</title>
-        <meta name="description" content={`${article.title} | Lyrics by Wyman Wong`} />
+        <meta name="description" content={`${article.title} | a simple blog`} />
       </Head>
 
       <Layout>
         <div className="mx-auto max-w-3xl px-3 sm:px-6">
+          <div className="mb-3 text-right sm:mb-6 lg:mb-9">
+            <DateFormatter dateString={article.date} />
+          </div>
           <div className="prose prose-slate mx-3" dangerouslySetInnerHTML={{ __html: article.htmlContent }} />
         </div>
       </Layout>

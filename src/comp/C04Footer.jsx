@@ -12,7 +12,7 @@ const Footer = () => {
         ))}
       </div>
       <div className="mt-8 md:order-1 md:mt-0">
-        <p className="text-center text-base text-gray-400">&copy; 2023 a simple blog</p>
+        <p className="text-center text-base text-gray-400">&copy; 2023 a simple blog by Cat Reunion</p>
       </div>
     </div>
   )

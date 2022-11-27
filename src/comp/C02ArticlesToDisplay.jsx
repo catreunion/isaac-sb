@@ -8,7 +8,7 @@ const ArticlesToDisplay = ({ articles }) => {
           <div className="flex w-full items-center justify-between space-x-6 px-3 py-6">
             <div className="flex-1 truncate">
               <Link href={`/articles/${item.id}`}>
-                <h3 className="pb-3 text-lg font-medium text-gray-900">{item.title}</h3>
+                <h3 className="truncate pb-3 text-lg font-medium text-gray-900">{item.title}</h3>
                 <div>
                   <span className="mt-1 truncate text-sm text-gray-500">
                     {`${item.date}   tags: ${item.tag1}, ${item.tag2}`}

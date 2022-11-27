@@ -33,7 +33,7 @@ const Post = ({ post }) => {
       <Layout>
         <h1>{post.title}</h1>
         <Date dateString={post.date} />
-        <div dangerouslySetInnerHTML={{ __html: post.contentHTML }} />
+        <div className="prose prose-slate" dangerouslySetInnerHTML={{ __html: post.contentHTML }} />
       </Layout>
     </>
   )

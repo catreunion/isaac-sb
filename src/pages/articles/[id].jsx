@@ -30,7 +30,7 @@ const ArticlePage = ({ article }) => {
 
       <Layout>
         <div className="mx-auto max-w-3xl px-3 sm:px-6">
-          <div className="mb-3 text-right sm:mb-6 lg:mb-9">
+          <div className="mb-6 text-right">
             <DateFormatter dateString={article.date} />
           </div>
           <div className="prose prose-slate mx-3" dangerouslySetInnerHTML={{ __html: article.htmlContent }} />

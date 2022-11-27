@@ -4,14 +4,20 @@ import matter from 'gray-matter'
 import html from 'remark-html'
 import { remark } from 'remark'
 
+// define the `articles` directory
 const articlesDirectory = path.join(process.cwd(), 'src/articles')
 
 export const getSortedArticles = () => {
+  // read that directory and access all md files
   const files = fs.readdirSync(articlesDirectory)
+  // loop through all md files
   const articles = files.map((fileName) => {
     const id = fileName.replace(/\.md$/, '')
+    // construct a file path
     const filePath = path.join(articlesDirectory, fileName)
+    // read that file
     const fileContent = fs.readFileSync(filePath, 'utf8')
+    // scrape/parse the frontmatter from the file
     const jsonContent = matter(fileContent)
 
     return {
@@ -42,7 +48,7 @@ export const getIDs = () => {
 
 export const getOneArticle = async (id) => {
   const filePath = path.join(articlesDirectory, `${id}.md`)
-  const fileContent = fs.readFileSync(filePath, 'utf8')
+  const fileContent = await fs.readFileSync(filePath, 'utf8')
   const jsonContent = matter(fileContent)
   const htmlContent = (await remark().use(html).process(jsonContent.content)).toString()
 

@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { getSortedPosts } from '@/engine'
-import Layout from '@/comp/layout'
-import DateFormatter from '@/comp/DateFormatter'
-import { homeTitle, homeDesc } from '@/wording'
+// import { getSortedPosts } from '@/engine'
+// import Layout from '@/comp/layout'
+// import DateFormatter from '@/comp/DateFormatter'
+// import { homeTitle, homeDesc } from '@/wording'
+import { getSortedPosts } from '../engine'
+import Layout from '../comp/Layout'
+import DateFormatter from '../comp/DateFormatter'
+import { homeTitle, homeDesc } from '../wording'
 
 export const getStaticProps = async () => {
   const posts = getSortedPosts()

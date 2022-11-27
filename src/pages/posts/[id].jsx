@@ -1,7 +1,10 @@
 import Head from 'next/head'
-import Layout from '@/comp/layout'
-import Date from '@/comp/DateFormatter'
-import { getIDs, getOnePost } from '@/engine'
+// import Layout from '@/comp/layout'
+// import Date from '@/comp/DateFormatter'
+// import { getIDs, getOnePost } from '@/engine'
+import Layout from '../../comp/Layout'
+import Date from '../../comp/DateFormatter'
+import { getIDs, getOnePost } from '../../engine'
 
 export const getStaticPaths = async () => {
   const paths = await getIDs()

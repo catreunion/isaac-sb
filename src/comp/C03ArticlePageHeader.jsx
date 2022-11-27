@@ -2,9 +2,7 @@ const ArticlePageHeader = () => {
   return (
     <div className="relative px-6 lg:px-8">
       <div className="mx-auto max-w-3xl py-6">
-        <h2 className="pt-6 text-center text-lg leading-8 tracking-wider text-gray-600">
-          a simple blog
-        </h2>
+        <h2 className="pt-6 text-center text-lg leading-8 tracking-wider text-gray-600">a simple blog</h2>
       </div>
 
       <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">

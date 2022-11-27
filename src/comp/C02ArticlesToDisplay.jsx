@@ -3,7 +3,10 @@ import DateFormatter from '@/comp/DateFormatter'
 
 const ArticlesToDisplay = ({ articles }) => {
   return (
-    <ul role="list" className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-9 sm:grid-cols-2 lg:grid-cols-3">
+    <ul
+      role="list"
+      className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-9 lg:grid-cols-3"
+    >
       {articles.map((item) => (
         <li key={item.id} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
           <div className="flex w-full items-center justify-between space-x-6 p-3">

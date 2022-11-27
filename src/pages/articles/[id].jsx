@@ -30,7 +30,7 @@ const ArticlePage = ({ article }) => {
       </Head>
 
       <Layout>
-        <div className="mx-auto max-w-3xl px-6">
+        <div className="mx-auto max-w-3xl px-3 sm:px-6">
           <Link href="/">
             <h1 className="pb-16 pt-6 text-center text-lg font-bold tracking-normal sm:text-3xl lg:pb-28 lg:text-6xl">
               {article.title}

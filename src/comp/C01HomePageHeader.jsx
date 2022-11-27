@@ -11,7 +11,7 @@ const HomePageHeader = () => {
         <div className="flex justify-center py-6">
           <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
             <span className="tracking-wide text-gray-600">
-              a blog created by{' '}
+              created by{' '}
               <Link href="/" className="font-semibold tracking-widest text-indigo-600">
                 Cat Reunion
               </Link>

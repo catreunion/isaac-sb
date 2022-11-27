@@ -1,45 +1,31 @@
 import Head from 'next/head'
-import Link from 'next/link'
-// import { getSortedPosts } from '@/engine'
-// import Layout from '@/comp/layout'
-// import DateFormatter from '@/comp/DateFormatter'
-// import { homeTitle, homeDesc } from '@/wording'
-import { getSortedPosts } from '../engine'
-import Layout from '../comp/Layout'
-import DateFormatter from '../comp/DateFormatter'
-import { homeTitle, homeDesc } from '../wording'
+import { getSortedArticles } from '@/engine'
+import { homePageTitle, homePageDesc } from '@/items/wording'
+import Layout from '@/comp/C00Layout'
+import ArticlesToDisplay from '@/comp/C02ArticlesToDisplay'
 
 export const getStaticProps = async () => {
-  const posts = getSortedPosts()
-
+  const articles = getSortedArticles()
   return {
     props: {
-      posts,
+      articles,
     },
   }
 }
 
-const Home = ({ posts }) => {
+const HomePage = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>{homeTitle}</title>
-        <meta name="description" content={homeDesc} />
+        <title>{homePageTitle}</title>
+        <meta name="description" content={homePageDesc} />
       </Head>
 
       <Layout home>
-        <h2>Articles</h2>
-        <ul>
-          {posts.map(({ id, date, title }) => (
-            <li key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <DateFormatter dateString={date} />
-            </li>
-          ))}
-        </ul>
+        <ArticlesToDisplay articles={articles} />
       </Layout>
     </>
   )
 }
 
-export default Home
+export default HomePage

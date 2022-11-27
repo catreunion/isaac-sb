@@ -1,8 +1,5 @@
-export const homeTitle = 'Simple Blog | Home'
-export const myName = 'Isaac Li'
-export const myTitle = 'A dad, a trail runner, a cat lover'
-export const siteTitle = 'A simple blog of Isaac Li'
-export const siteDesc = 'Learn how to build a personal website using Next.js'
+export const homePageTitle = 'a simple blog'
+export const homePageDesc = 'A simple blog created by Cat Reunion.'
 export const keywords = 'blog'
 
 export const EXAMPLE_PATH = 'blog-starter'

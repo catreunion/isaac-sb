@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import DateFormatter from '@/comp/DateFormatter'
 
 const ArticlesToDisplay = ({ articles }) => {
   return (
@@ -9,10 +10,11 @@ const ArticlesToDisplay = ({ articles }) => {
             <div className="flex-1 truncate">
               <Link href={`/articles/${item.id}`}>
                 <h3 className="truncate pb-3 text-lg font-medium text-gray-900">{item.title}</h3>
-                <div>
-                  <span className="mt-1 truncate text-sm text-gray-500">
-                    {`${item.date}   tags: ${item.tag1}, ${item.tag2}`}
-                  </span>
+                <DateFormatter dateString={item.date} />
+                <div className="flex">
+                  <div className="my-3 grow-0 rounded-full bg-green-100 px-3 text-base font-medium text-green-800">
+                    {`${item.tag1}, ${item.tag2}`}
+                  </div>
                 </div>
               </Link>
             </div>

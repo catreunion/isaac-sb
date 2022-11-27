@@ -22,7 +22,7 @@ const Layout = ({ children, home }) => {
 
       {!home && (
         <Link href="/">
-          <p className="py-6 text-center text-gray-500">← Back to home</p>
+          <p className="py-9 text-center text-gray-500 sm:py-12 lg:py-20">← Back to home</p>
         </Link>
       )}
       <Footer />

@@ -10,14 +10,15 @@ const articlesDirectory = path.join(process.cwd(), 'src/articles')
 export const getSortedArticles = () => {
   // read that directory and access all md files
   const files = fs.readdirSync(articlesDirectory)
-  // loop through all md files
+  // loop through each md file
   const articles = files.map((fileName) => {
+    // define `id` as the filename without file extension
     const id = fileName.replace(/\.md$/, '')
-    // construct a file path
+    // construct the file path
     const filePath = path.join(articlesDirectory, fileName)
     // read that file
     const fileContent = fs.readFileSync(filePath, 'utf8')
-    // scrape/parse the frontmatter from the file
+    // scrape / parse the frontmatter from that file
     const jsonContent = matter(fileContent)
 
     return {
@@ -35,8 +36,11 @@ export const getSortedArticles = () => {
   })
 }
 
+// called by getStaticPaths for obtaining dynamic routes
 export const getIDs = () => {
+  // read the articles directory and access all md files
   const files = fs.readdirSync(articlesDirectory)
+  // loop through each md file
   return files.map((fileName) => {
     return {
       params: {
@@ -47,9 +51,13 @@ export const getIDs = () => {
 }
 
 export const getOneArticle = async (id) => {
+  // construct the file path
   const filePath = path.join(articlesDirectory, `${id}.md`)
+  // read that file
   const fileContent = await fs.readFileSync(filePath, 'utf8')
+  // scrape / parse the frontmatter from that file
   const jsonContent = matter(fileContent)
+  // generate HTML elements
   const htmlContent = (await remark().use(html).process(jsonContent.content)).toString()
 
   return {
